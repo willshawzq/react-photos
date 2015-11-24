@@ -1,0 +1,73 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.photo-page header, .photo-page footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.photo-page header:before, .photo-page footer:before, .photo-page header:after, .photo-page footer:after {
+  display: flex;
+}
+
+.photo-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-size: .15rem;
+}
+.photo-page header {
+  height: .45rem;
+  border-top: 2px solid #353535;
+  border-bottom: 2px solid #353535;
+  background: linear-gradient(top, #292929, #1e1e1e);
+  color: #fff;
+  line-height: .45rem;
+  text-align: center;
+}
+.photo-page header .btn {
+  width: .5rem;
+  height: .25rem;
+  line-height: 1.5;
+  border: 2px solid #0d0d0d;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #0d0d0d,inset 0 0 2px #232323;
+}
+.photo-page footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: .55rem;
+  line-height: .55rem;
+  background: linear-gradient(top, #1e1f21, #121212);
+}
+.photo-page footer a {
+  width: 50%;
+}
+.photo-page footer a:nth-of-type(1) {
+  border-right: 1px solid #222222;
+}
+.photo-page footer a.active {
+  background: linear-gradient(top, #101010, #070707);
+}
+.photo-page a {
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}
+.photo-page ul {
+  margin: 0;
+  font-size: .15rem;
+  list-style: none;
+}
