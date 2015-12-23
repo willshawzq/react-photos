@@ -100,6 +100,10 @@ body {
 		    transition: all .5s ease;
 		}
 	}
+	.to-middle {
+		left: calc(50% - .5rem) !important;
+		transition: left .5s linear;
+	}
 	.box-3D {
 		position: absolute;
 		width: 1rem;
@@ -109,7 +113,6 @@ body {
 		background: no-repeat -1000px 0 #000;
 		&.show {
 			div {
-				transition: transform .8s ease-in-out;
 				transform: rotateY(-60deg) rotateX(5deg);
 			}
 			> div {
@@ -126,6 +129,7 @@ body {
 			background-size: cover;
 			transform-style: preserve-3d;
 			transform-origin: left 80%;
+			transition: transform .8s ease-in-out;
 		}
 		> div {
 			left: 0;
