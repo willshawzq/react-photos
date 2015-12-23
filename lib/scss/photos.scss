@@ -105,24 +105,30 @@ body {
 		width: 1rem;
 		height: 1rem;
 		perspective: 800px;
-
+		overflow: hidden;
+		background: no-repeat -1000px 0 #000;
+		&.show {
+			div {
+				transition: transform .8s ease-in-out;
+				transform: rotateY(-60deg) rotateX(5deg);
+			}
+			> div {
+				transform:rotateY(-60deg) rotateX(5deg) translateX(1rem);
+			}
+		}
 		div {
 			position: absolute;
-			width: 10%;
+			left: .1rem;
+			width: .1rem;
 			height: 100%;
-			background: url(dist/video/1.jpg);
+			background-repeat:no-repeat; 
+			background-image:inherit;
 			background-size: cover;
 			transform-style: preserve-3d;
 			transform-origin: left 80%;
-			&.show {
-				transform: rotateY(-60deg) rotateX(5deg);
-			}
 		}
 		> div {
 			left: 0;
-			&.show {
-				transform: rotateY(-60deg) rotateX(5deg);
-			}
 		}
 	}
 }
