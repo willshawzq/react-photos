@@ -97,20 +97,22 @@ body {
 			width: 1rem;
 		    height: 1rem;
 		    background-size: cover;
-		    transition: all .5s ease;
+		    transition: .5s left,.5s top;
 		}
 	}
-	.to-middle {
+	.to-delete {
 		left: calc(50% - .5rem) !important;
-		transition: left .5s linear;
+		top: 100% !important;
+		transition: left .3s ease-in, top .5s .3s ease-out;
 	}
 	.box-3D {
 		position: absolute;
+		z-index: 2;
 		width: 1rem;
 		height: 1rem;
 		perspective: 800px;
 		overflow: hidden;
-		background: no-repeat -1000px 0 #000;
+		background: no-repeat -1000px 0;
 		&.show {
 			div {
 				transform: rotateY(-60deg) rotateX(5deg);
@@ -134,5 +136,36 @@ body {
 		> div {
 			left: 0;
 		}
+	}
+	.recycle{
+		position:absolute;
+		z-index:3;
+		left:calc(50% - 0.6rem);
+		bottom:-1.2rem; 
+		width:1.2rem;
+		height:1.2rem; 
+		transition:0.5s;
+		background:url(../img/recycle.png) no-repeat; 
+		background-size:cover; 
+	}
+	.recycle:nth-of-type(1){ 
+		z-index:1;
+		background-image:url(../img/recycle2.png);
+	}
+	.drop {
+		.recycle {
+			animation: .8s drop;
+		}
+	}
+}
+@keyframes drop {
+	0% {
+		bottom: -0.8rem;
+	}
+	50% {
+		bottom: -0.6rem;
+	}
+	100% {
+		bottom: -0.8rem;
 	}
 }
